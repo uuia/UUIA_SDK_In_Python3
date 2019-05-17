@@ -39,6 +39,3 @@ def uuia_controller():
         "message":message,
         "data":data
     })
-
-if __name__ == '__main__':
-    app.run()
