@@ -1,6 +1,7 @@
 #@writer : zhongbr
 #@filename: bind.py
 #@purpose: 绑定账号的数据层实现
+from hbut_data_sipder.hbut_api import bind_API
 
 class Bind:
     """
@@ -12,4 +13,4 @@ class Bind:
         :param request: http请求post参数字典
         :return: 获取到的数据，Python字典格式
         """
-        # TODO ( UUIA )：请在这里完成用户绑定的数据获取层
+        return bind_API(request)

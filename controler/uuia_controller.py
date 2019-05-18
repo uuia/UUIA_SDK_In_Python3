@@ -34,7 +34,12 @@ def uuia_controller():
             code = Constant().RESPONSE_CODE_INTERNAL_SERVER_ERROR
             message = Constant().RESPONSE_MSG_INTERNAL_SERVER_ERROR
             data = {}
-            Uuia_logger().i(tag="UUIA Controller",content=str(e))
+            Uuia_logger().i(tag="UUIA Controller", content=str(e))
+        except:
+            code = Constant().RESPONSE_CODE_INTERNAL_SERVER_ERROR
+            message = Constant().RESPONSE_MSG_INTERNAL_SERVER_ERROR
+            data = {}
+            Uuia_logger().i(tag="UUIA Controller", content=str("Some error has happed in the server !"))
     return json.dumps({
         "code":code,
         "message":message,

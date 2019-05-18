@@ -1,7 +1,7 @@
 #@writer : zhongbr
 #@filename:
 #@purpose:
-
+from hbut_data_sipder.hbut_api import user_info_API
 class User_info:
     """
     用户信息类
@@ -12,4 +12,4 @@ class User_info:
         :param request: http请求post参数字典
         :return: 获取到的数据，Python字典格式
         """
-        # TODO ( UUIA )：请在这里完成用户信息的数据获取层
+        return user_info_API(request.get("uuid"))

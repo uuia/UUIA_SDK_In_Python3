@@ -1,6 +1,7 @@
 #@writer : zhongbr
 #@filename:
 #@purpose:
+from hbut_data_sipder.hbut_api import schedule_API
 
 class Schedule:
     """
@@ -12,4 +13,4 @@ class Schedule:
         :param request: http请求post参数字典
         :return: 获取到的数据，Python字典格式
         """
-        # TODO ( UUIA )：请在这里完成用户课表的数据获取层
+        return schedule_API(request.get("uuid"))

@@ -1,6 +1,7 @@
 #@writer : zhongbr
 #@filename: bind_type.py
 #@purpose: 需要绑定的账户类型的数据层实现
+from hbut_data_sipder.hbut_api import bind_types_API
 
 class Bind_type:
     """
@@ -12,4 +13,4 @@ class Bind_type:
         :param request: http请求post参数字典
         :return: 获取到的数据，Python字典格式
         """
-        # TODO ( UUIA )：请在这里完成用户需绑定账户类型的数据获取层
+        return bind_types_API(request.get("uuid"))
