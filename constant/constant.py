@@ -6,7 +6,7 @@ class Constant:
     def __init__(self):
         # 框架配置
         self.app_id = ""
-        self.app_token = ""
+        self.app_token = "1234"
         self.app_name = "UUIA" #应用名称
         self.running_port = 443#运行端口
         # API 响应码

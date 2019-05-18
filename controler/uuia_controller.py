@@ -23,7 +23,8 @@ def uuia_controller():
         code = Constant().RESPONSE_CODE_OK
         message = Constant().RESPONSE_MSG_OK
         try:
-            data = parser.paeser(request)
+            form = json.loads(request.get_data(as_text=True))
+            data = parser.paeser(request,form)
         except Lack_necessary_info_exception as e:
             code = Constant().RESPONSE_CODE_INTERNAL_SERVER_ERROR
             message = Constant().RESPONSE_MSG_INTERNAL_SERVER_ERROR
