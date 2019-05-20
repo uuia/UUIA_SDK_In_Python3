@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="pi@192.168.31.193:22" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="pi@192.168.31.193:22" uploadOnCheckin="a9f651c4-a046-4158-a97a-68a5b350f83c" autoUploadExternalChanges="true">
     <serverData>
       <paths name="pi@192.168.31.193:22">
         <serverdata>
@@ -17,6 +17,7 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="pi@192.168.31.193:22" />
     <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
