@@ -98,7 +98,7 @@ def get_data_callback(uuid,request_args):
 ### 5. 异常处理
 &#160; &#160; &#160; &#160;SDK运行过程中可能会出现下面三种异常：
 - Callback_exception ：用户请求的group和action无对应的回调函数处理
-- Config_error_exception ：Uuia流泪实例化时的配置信息不合法
+- Config_error_exception ：Uuia类实例化时的配置信息不合法
 - Lack_necessary_info_exception ：用户请求Post data或者是回调函数返回值中缺少必要值
 
 ### 6.项目的启动
