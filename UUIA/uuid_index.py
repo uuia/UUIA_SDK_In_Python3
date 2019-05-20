@@ -2,6 +2,7 @@
 # @filename:
 # @purpose:
 from .controler.uuia_controller import setting_flask_application  # 从controller导入flask app
+from .exception.config_error_exception import Config_error_exception
 from .util.uuia_logger import Uuia_logger
 from .constant.constant import Constant
 
@@ -80,6 +81,7 @@ class Uuia:
         is_right, messgae = self.__config_check__()
         if not is_right:
             Uuia_logger().e(tag="UUIA.run", content=messgae)
+            raise Config_error_exception(message="The config of UUIA is wrong : {}".format(messgae))
         # 创建自定义设置实例
         constant = Constant(app_name=self.app_name, app_id=self.app_id, app_token=self.app_token)
         web_app = setting_flask_application(
@@ -94,13 +96,22 @@ class Uuia:
                             content="The UUIA is running on the address of \"https://{}:{}{}\"".format(self.running_ip,
                                                                                                        self.running_port,
                                                                                                        self.running_domain))
+            web_app.run(
+                host=self.running_ip,
+                port=self.running_port,
+                ssl_context=(
+                    self.ssl_crt,
+                    self.ssl_key
+                ),
+                debug=flask_debug
+            )
         else:
             Uuia_logger().i(tag="UUIA.run",
                             content="The UUIA is running on the address of \"http://{}:{}{}\"".format(self.running_ip,
                                                                                                       self.running_port,
                                                                                                       self.running_domain))
-        web_app.run(
-            host=self.running_ip,
-            port=self.running_port,
-            debug=flask_debug
-        )
+            web_app.run(
+                host=self.running_ip,
+                port=self.running_port,
+                debug=flask_debug
+            )

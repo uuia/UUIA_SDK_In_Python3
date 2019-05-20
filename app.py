@@ -1,4 +1,4 @@
-from UUIA import UUIA  # 导入Uuia类
+from UUIA import Uuia  # 导入Uuia类
 
 # Uuia类实例化
 uuia = Uuia(
@@ -8,7 +8,10 @@ uuia = Uuia(
     running_port=443,  # 运行端口
     running_ip="127.0.0.1",  # 运行ip
     thread_name=__name__,  # 监听线程
-    running_domain="/uuia"  # 运行url
+    running_domain="/uuia",  # 运行url
+    ssl_flag=False,  # 是否开启ssl
+    ssl_crt="path/to/ssl/crt",  # 证书crt位置，ssl_flag 为true时必要
+    ssl_key="path/to/ssl/key",  # 证书key位置，ssl_flag 为true时必要
 )
 
 

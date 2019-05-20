@@ -13,9 +13,13 @@ def get_response_data(group, action, request, form, callbacks):
         if callback_func == None:
             raise Callback_exception(
                 "The callback function of action:\"{}\" for group:\"{}\" is not existing .".format(action, group))
-        response = callback_func(form, request)
-        if not response.get("uuid"):
+        response = callback_func(form.get("uuid"), form)
+        if not response:
             raise Lack_necessary_info_exception("In response of action '{}' , an uuid for user is needed !".format(action))
-        return response
+        if response.get("uuid"):
+            return response
+        else:
+            raise Lack_necessary_info_exception(
+                "In response of action '{}' , an uuid for user is needed !".format(action))
     else:
         raise Lack_necessary_info_exception("There isn't a string of uuid from the request from center server.")
