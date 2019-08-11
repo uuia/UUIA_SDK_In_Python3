@@ -1,5 +1,9 @@
 # UUIA SDK In Python3 
 
+***
+UUIA Python SDK 正在维护，请暂时使用 [Java版本SDK](https://github.com/uuia/UUIA-Java-SDK) 或等待维护完毕。
+***
+
 ## 1.使用到的python第三方库
 - Flask web框架
 
